@@ -1,5 +1,4 @@
 # CATS BOT
 
-## LINK BOT: [REGISTER HERE](https://t.me/Agent301Bot/app?startapp=onetime1219868821)
-
-## TUTORIAL IN GROUP : [JOIN HERE](https://t.me/sansxgroup)
+## LINK BOT: [Register Here](https://t.me/catsgang_bot/join?startapp=Oddo0AB2dBJXaSEvvOeqG)
+## TUTORIAL IN GROUP : [Join Here](https://t.me/sansxgroup)
