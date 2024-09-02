@@ -16,7 +16,7 @@ headers = {
 
 def process_user_info(auth, account_number):
     headers['Authorization'] = f"tma {auth}"
-    response = requests.get("https://cats-backend-wkejfn-production.up.railway.app/user", headers=headers)
+    response = requests.get("https://cats-backend-cxblew-prod.up.railway.app/user", headers=headers)
 
     if response.status_code == 200:
         data = response.json()
@@ -25,12 +25,12 @@ def process_user_info(auth, account_number):
         print(f"Account #{account_number} ({username}) - {total_rewards} CATS")
         print(f"------------------------------------")
     else:
-        print(f"Error fetching user info for account {account_number}: {response.status_code}")
+        print(f"Error fetching user info for account {account_number}: {response.json().get('message','error data')}")
 
 
 def process_tasks(auth):
     headers['Authorization'] = f"tma {auth}"
-    response = requests.get("https://cats-backend-wkejfn-production.up.railway.app/tasks/user", headers=headers)
+    response = requests.get("https://cats-backend-cxblew-prod.up.railway.app/tasks/user", headers=headers)
 
     if response.status_code == 200:
         tasks = response.json().get("tasks", [])
@@ -55,7 +55,7 @@ def process_tasks(auth):
 
 def claim_task(auth, task_id, status_claim):
     headers['Authorization'] = f"tma {auth}"
-    url = f"https://cats-backend-wkejfn-production.up.railway.app/tasks/{task_id}/complete"
+    url = f"https://cats-backend-cxblew-prod.up.railway.app/tasks/{task_id}/complete"
     response = requests.post(url, headers=headers, json={})
 
     if response.status_code == 200:
@@ -66,7 +66,7 @@ def claim_task(auth, task_id, status_claim):
 
 def check_task(auth, task_id, status_claim):
     headers['Authorization'] = f"tma {auth}"
-    url = f"https://cats-backend-wkejfn-production.up.railway.app/tasks/{task_id}/check"
+    url = f"https://cats-backend-cxblew-prod.up.railway.app/tasks/{task_id}/check"
     response = requests.post(url, headers=headers, json={})
 
     if response.status_code == 200:
